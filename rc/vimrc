@@ -1,0 +1,184 @@
+filetype plugin indent on
+set ch=2
+set visualbell t_vb=""
+
+"For File Explorer
+let g:explVertical=1
+let g:explSplitRight=1
+let g:explStartRight=1
+let g:explWinSize=20
+
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
+if version >=500
+let c_comment_strings=1
+syntax enable
+set hlsearch
+set mousehide
+
+"    highlight Normal          gui=NONE guibg=MidnightBlue  guifg=White
+"    highlight NonText         gui=NONE guibg=blue4
+"    highlight Comment         gui=NONE guibg=MidnightBlue  guifg=LightGreen
+"    highlight Constant        gui=NONE guibg=grey20        guifg=LightPink
+"    highlight Identifier      gui=NONE guibg=MidnightBlue  guifg=LightSkyBlue
+"    highlight Statement       gui=NONE guibg=MidnightBlue  guifg=LightCyan
+"    highlight PreProc         gui=NONE guibg=MidnightBlue  guifg=wheat
+"    highlight Type            gui=NONE guibg=MidnightBlue  guifg=gold
+"    highlight Special         gui=NONE guibg=grey20        guifg=RosyBrown
+"    highlight Ignore          gui=NONE guibg=MidnightBlue  guifg=magenta4
+"    highlight Error           gui=NONE guibg=Red           guifg=White
+"    highlight Todo            gui=NONE guibg=grey20        guifg=orange
+
+endif
+
+set ic
+set pastetoggle=<F4>
+set nu
+set ts=2
+set softtabstop=2
+set shiftwidth=2
+set et
+"%retab!
+set mouse=nc
+"set mouse=a
+set autoindent
+set smartindent
+set autowrite
+set cindent
+set nocompatible
+set backspace=2
+set bioskey
+set cpoptions=cFs
+set helpheight=15
+set infercase
+set keywordprg=man\ -a
+set laststatus=2
+set notextmode
+set ruler
+set scrolloff=3
+set shortmess=ao
+set showbreak=>>
+set showmatch
+set showmode
+set sidescroll=8
+set smartcase
+"set smarttab
+set splitbelow
+set splitright
+set nostartofline
+set ttyscroll=5
+set whichwrap=[,],<,>,h,l
+set winheight=2
+set cinoptions=:0,p0,t0,<1s
+"if &term == "xterm-color"
+"   set t_kb=^H
+"   fixdel
+"   set t_kD=^[[3~
+"endif
+
+set bg=light
+command E Exp
+
+" For File Explorer
+let g:explVertical = 1
+let g:explSplitRight = 1
+let g:explStartRight = 1
+let g:explWinSize = 20
+
+" nerdTree configure
+let g:miniBufExplMapWindowNavVim = 1  " Ctrl+[hjkl] 로 윈도우간 이동 가능
+let g:miniBufExplMapWindowNavArrows = 1 " Ctrl+화살표로 윈도우간 이동 가능
+let g:miniBufExplMapCTabSwitchBufs = 1 " Ctrl-Tab, Ctrl-Shift-Tab으로 버퍼간 스위칭... !! 짱이예욤!!
+let g:miniBufExplModSelTarget = 1
+
+"let NERDTreeIgnore=['\.vim$', '\~$', '.*\.class$', 'CVS', 'classes','.*\.jar$'] "일부 파일들 목록에서 제외
+" 단축키로 실행
+map <F3> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1 " 파일 열고나서 자동으로 NERDTree 창을 닫음
+let g:mta_filetypes = {'html' : 1,'xhtml' : 1,'xml' : 1,'jinja' : 1,}
+
+"set nocompatible              " be iMproved, required
+"filetype off                  " required
+"
+"" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"" alternatively, pass a path where Vundle should install plugins
+""call vundle#begin('~/some/path/here')
+"
+"" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+"
+"" The following are examples of different formats supported.
+"" Keep Plugin commands between vundle#begin/end.
+"" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+"" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+"" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+"" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+"" The sparkup vim script is in a subdirectory of this repo called vim.
+"" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" Install L9 and avoid a Naming conflict if you've already installed a
+"" different version somewhere else.
+"Plugin 'ascenator/L9', {'name': 'newL9'}
+"
+"" All of your Plugins must be added before the following line
+"call vundle#end()            " required
+"filetype plugin indent on    " required
+"" To ignore plugin indent changes, instead use:
+""filetype plugin on
+""
+"" Brief help
+"" :PluginList       - lists configured plugins
+"" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+"" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+"" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+""
+"" see :h vundle for more details or wiki for FAQ
+"" Put your non-Plugin stuff after this line
+"
+"" Define paths
+"if has('win32') || has('win64') || has('win32unix')
+"  let g:janus_path = expand("~/.vim/janus/vim")
+"  let g:janus_vim_path = expand("~/.vim/janus/vim")
+"else
+"  let g:janus_path = escape(fnamemodify(resolve(expand("<sfile>:p")), ":h"), ' ')
+"  let g:janus_vim_path = escape(fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h"), ' ')
+"endif
+"let g:janus_custom_path = expand("~/.janus")
+"
+"" Source janus's core
+"exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
+"
+"" You should note that groups will be processed by Pathogen in reverse
+"" order they were added.
+"call janus#add_group("tools")
+"call janus#add_group("langs")
+"call janus#add_group("colors")
+"
+"""
+""" Customisations
+"""
+"
+"if filereadable(expand("~/.vimrc.before"))
+"  source ~/.vimrc.before
+"endif
+"
+"
+"" Disable plugins prior to loading pathogen
+"exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
+"
+"""
+""" Pathogen setup
+"""
+"
+"" Load all groups, custom dir, and janus core
+"call janus#load_pathogen()
+"
+"" .vimrc.after is loaded after the plugins have loaded
+
