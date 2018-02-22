@@ -93,17 +93,23 @@ alias ga='git add'
 alias gm='git merge'
 alias gb='git branch'
 alias gd='git diff'
+alias gdh='git diff HEAD'
 alias gc='git commit'
 alias gco='git checkout'
+alias gcp='git cherry-pick'
+alias gcr='git cherry'
 alias gpl='git pull'
+alias gplo='git pull origin'
 alias gps='git push'
+alias gpso='git push origin'
+alias glg='git log --stat'
 alias glg='git log --stat'
 alias glgg='git log --graph'
 alias grm='git rm'
 alias grs='git reset'
 alias grv='git rev-list --count'
 alias grb='git rebase'
-alias gcr='git cherry'
+alias gcr='git cherry -v'
 alias cppr='cap production'
 alias grp='grep -rl'
 alias ..=' cd ..; ls'
@@ -118,7 +124,14 @@ alias cd....='....'
 alias bi='bundle install'
 alias rdd='rake db:drop; rake db:migrate; rake db:seed'
 alias sshtest='ssh nam@test.starfandom.com'
+alias gst='git stash'
 alias gsl='git stash list'
+alias blah='function _blah(){ echo "First: $1"; echo "Second: $2"; };_blah'
+alias gshcr='function _gsh_cr(){ git show $(git cherry $1 $2 | sed "s/+ //") }; _gsh_cr'
+alias pyrun='python manage.py runserver'
+alias pysh='python manage.py shell'
+alias pymi='python manage.py migrate'
+alias pymakemi='python manage.py makemigrations'
 
 export ic=/Users/royce/Library/Mobile\ Documents/com\~apple\~CloudDocs/
 export dev=/Users/royce/Library/Mobile\ Documents/com\~apple\~CloudDocs/develop/
@@ -128,11 +141,14 @@ export snulion=/Users/royce/Library/Mobile\ Documents/com\~apple\~CloudDocs/like
 export sk=/Users/royce/Library/Mobile\ Documents/com\~apple\~CloudDocs/MOOC/sung\ kim/projects/
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 # export SECRET_KEY="dn&k2krgu&tc%gj2yk(d3lv8gh1)x$5qzx26#e@^51k@7^fsvf"
 # export DJANGO_SETTINGS_MODULE="dating.settings.local"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+eval "$(rbenv init -)"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
