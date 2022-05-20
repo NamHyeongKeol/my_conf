@@ -13,7 +13,6 @@ map! <S-Insert> <MiddleMouse>
 
 if version >=500
 let c_comment_strings=1
-syntax enable
 set hlsearch
 set mousehide
 
@@ -181,4 +180,8 @@ let g:mta_filetypes = {'html' : 1,'xhtml' : 1,'xml' : 1,'jinja' : 1,}
 "call janus#load_pathogen()
 "
 "" .vimrc.after is loaded after the plugins have loaded
+
+set clipboard=unnamed
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
